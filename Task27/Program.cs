@@ -3,4 +3,28 @@
 // 82 -> 10
 // 9012 -> 12
 
-Console.WriteLine("Hello, World!");
+using System;
+class Program
+{
+
+    static void Main(string[] args)
+    {
+        Console.Write("Введите число: ");
+        int n = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine($"В числе {n} сумма цифр равна - {Program.CountSum(n)}");
+    }
+
+    static int CountSum(int n)
+    {
+        string str = n.ToString();
+
+        char[] chars = str.ToCharArray();
+        int c = 0;
+        for (int i = 0; i < str.Length; i++)
+        {
+            c = c + (int)Char.GetNumericValue(chars[i]);
+        }
+        return c;
+    }
+
+}
